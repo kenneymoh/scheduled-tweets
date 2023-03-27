@@ -6,6 +6,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
+
       <ul class="navbar-nav">
         <li class="nav-item">
           <%= link_to "Home", root_path, class:"nav-link" %>
@@ -16,27 +17,27 @@
       </ul>
 
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-      <% if Current.user %>
+        <% if Current.user %>
 
-      <li class="nav-item">
-        <span class="navbar-text"><%= Current.user.email %> </span>
-      </li>
+          <li class="nav-item">
+            <%= link_to Current.user.email, edit_password_path, class: "nav-link" %>
+          </li>
 
-      <li class="nav-item">
-        <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-info" %>
-      </li>
+          <li class="nav-item">
+            <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-info" %>
+          </li>
 
-      <% else %>
+        <% else %>
 
-      <li class="nav-item">
-        <%= link_to "Sign Up", sign_up_path, class: "nav-link" %>
-      </li>
+          <li class="nav-item">
+            <%= link_to "Sign Up", sign_up_path, class: "nav-link" %>
+          </li>
 
-      <li class="nav-item">
-        <%= link_to "Login", sign_in_path, class: "nav-link" %>
-      </li>
+          <li class="nav-item">
+            <%= link_to "Login", sign_in_path, class: "nav-link" %>
+          </li>
 
-      <% end %>
+        <% end %>
       </ul>
 
     </div>
