@@ -4,7 +4,7 @@ get /about HTTP/1.1
 Host: 127.0.0.1
 
 ## routes
-matchers for the ur that is requested
+matchers for the url that is requested
 
 get for "/about"
 
